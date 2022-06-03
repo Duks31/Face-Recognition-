@@ -45,7 +45,7 @@ while True:
     # read the current frame 
     succcesful_frame_read, frame = webcam.read()
     #converting to grey scale 
-    grayscale_img = cv2.cvtColor(frame, cv2.Color_BGR2GRAY)
+    grayscale_img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     #Detect faces
     face_coordinates = trained_face_data.detectMultiScale(grayscale_img)    
     
@@ -53,4 +53,4 @@ while True:
         cv2.rectangle(frame, (x,y), (x+w, y+h), (randrange(256), randrange(256), randrange(256)), 2)
         
     cv2.imshow('My Face Detector',frame)
-    cv2.waitkey(1)
+    cv2.waitKey(1)
